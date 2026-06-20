@@ -1,4 +1,4 @@
-const CACHE_NAME = 'facephys-v1';
+const CACHE_NAME = 'facephys-v2';
 
 const CORE_ASSETS = [
     './',
