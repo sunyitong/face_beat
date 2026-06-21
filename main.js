@@ -285,7 +285,7 @@ class VisEngine {
 const visEngine = new VisEngine();
 
 function updateWorkerModes() {
-    const isNarrow = window.innerWidth <= 800;
+    const isNarrow = window.innerWidth <= 320;
     inferenceWorker.postMessage({ type: 'setMode', payload: { isLowPower: isNarrow } });
     psdWorker.postMessage({ type: 'setMode', payload: { isLowPower: isNarrow } });
 }
