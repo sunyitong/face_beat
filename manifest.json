@@ -1,21 +1,26 @@
 {
-  "name": "rPPG Monitor",
-  "short_name": "rPPG",
-  "start_url": "./index.html",
+  "id": "./",
+  "name": "FacePhys Demo",
+  "short_name": "FacePhys",
+  "description": "FacePhys camera demo",
+  "start_url": "./",
+  "scope": "./",
   "display": "standalone",
-  "background_color": "#c0c0c0",
-  "theme_color": "#c0c0c0",
+  "background_color": "#020617",
+  "theme_color": "#0f172a",
   "orientation": "any",
   "icons": [
     {
       "src": "./resource/icon-192.png",
       "sizes": "192x192",
-      "type": "image/png"
+      "type": "image/png",
+      "purpose": "any maskable"
     },
     {
       "src": "./resource/icon-512.png",
       "sizes": "512x512",
-      "type": "image/png"
+      "type": "image/png",
+      "purpose": "any maskable"
     }
   ]
 }
