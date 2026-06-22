@@ -6,7 +6,7 @@
     var vConsole = new VConsole();
     </script> -->
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
     <meta name="theme-color" content="#0f172a">
     <meta name="mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-capable" content="yes">
@@ -15,7 +15,7 @@
     <link rel="manifest" href="manifest.json">
     <link rel="icon" type="image/png" sizes="192x192" href="./resource/icon-192.png">
     <link rel="icon" type="image/png" sizes="512x512" href="./resource/icon-512.png">
-    <link rel="apple-touch-icon" href="./resource/icon-192.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="./resource/icon-180.png">
     <title>FacePhys Demo</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css">
     <script src="https://cdn.jsdelivr.net/npm/jszip@3.10.1/dist/jszip.min.js"></script>
@@ -36,6 +36,12 @@
             --grid: rgba(34, 211, 238, 0.22);
         }
 
+        html {
+            margin: 0;
+            min-height: 100%;
+            background: #020617;
+        }
+
         body {
             margin: 0;
             background:
@@ -45,14 +51,15 @@
             color: var(--win-text);
             font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
             min-height: 100vh;
-            width: 100vw;
+            min-height: 100dvh;
+            width: 100%;
             display: flex;
             justify-content: center;
-            align-items: center; 
-            padding: 50px 10px 110px 10px;
+            align-items: center;
+            padding: calc(50px + env(safe-area-inset-top)) 10px calc(110px + env(safe-area-inset-bottom)) 10px;
             box-sizing: border-box;
             overflow-x: hidden;
-            overflow-y: auto; 
+            overflow-y: auto;
             user-select: none; 
             -webkit-user-select: none;
         }
@@ -62,8 +69,8 @@
             top: 0;
             left: 0;
             width: 100%;
-            height: 42px;
-            background: rgba(2, 6, 23, 0.82);
+            height: calc(42px + env(safe-area-inset-top));
+            background: rgba(2, 6, 23, 0.94);
             border-bottom: 1px solid rgba(148, 163, 184, 0.22);
             box-shadow: 0 14px 40px rgba(2, 6, 23, 0.28);
             backdrop-filter: blur(18px);
@@ -71,7 +78,7 @@
             display: flex;
             align-items: center;
             justify-content: space-between;
-            padding: 0 6px;
+            padding: env(safe-area-inset-top) 6px 0 6px;
             box-sizing: border-box;
             font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
         }
@@ -250,7 +257,7 @@
         #monitor-col { flex: 1; display: flex; flex-direction: column; gap: 6px; min-width: 0; }
         
         @media (max-width: 900px) {
-            body { align-items: flex-start; padding-top: 60px; }
+            body { align-items: flex-start; padding-top: calc(60px + env(safe-area-inset-top)); }
             #monitor-window { max-width: 100%; }
             #main-content { flex-direction: column; }
             #monitor-col { order: 1; }

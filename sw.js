@@ -1,4 +1,4 @@
-const CACHE_NAME = 'facephys-v5';
+const CACHE_NAME = 'facephys-v6';
 
 const CORE_ASSETS = [
     './',
@@ -7,7 +7,10 @@ const CORE_ASSETS = [
     './inference_worker.js',
     './psd_worker.js',
     './plot_worker.js',
-    './manifest.json'
+    './manifest.json',
+    './resource/icon-180.png',
+    './resource/icon-192.png',
+    './resource/icon-512.png'
 ];
 
 self.addEventListener('install', (e) => {
